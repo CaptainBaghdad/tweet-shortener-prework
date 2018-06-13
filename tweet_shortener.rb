@@ -1,13 +1,12 @@
 # Write your code here.
-
-def word_substituter(word)
-  subs = {
+subs = {
     
 "hello" => 'hi',
   "too" => '2',
 "two" => "2",
 "to" => "2",
 "for"=> "4",
+"For" => "4",
 "four" => "4",
 'be'  =>  'b',
 "you" =>  "u" ,
@@ -15,6 +14,10 @@ def word_substituter(word)
 "and" => "&"
     
   }
+
+
+def word_substituter(word)
+  
   
   words = word.split(" ")
   keys = subs.keys
@@ -32,21 +35,7 @@ end
 
 def bulk_tweet_shortener(array)
   
-  subs = {
-    
-"hello" => 'hi',
-  "too" => '2',
-"two" => "2",
-"to" => "2",
-"for"=> "4",
-"For" => "4",
-"four" => "4",
-'be'  =>  'b',
-"you" =>  "u" ,
-"at" => "@",
-"and" => "&"
-    
-  }
+ 
   
   
   subs.default_proc = ->(h, k) { k }
@@ -59,22 +48,7 @@ end
 
 
 def selective_tweet_shortener(sentence)
-   subs = {
-    
-"hello" => 'hi',
-  "too" => '2',
-"two" => "2",
-"to" => "2",
-"for"=> "4",
-"For" => "4",
-"four" => "4",
-'be'  =>  'b',
-"you" =>  "u" ,
-"at" => "@",
-"and" => "&"
-    
-  }
-
+   
     sentence.length > 140 ? word_substituter(sentence) : sentence
 end 
 
